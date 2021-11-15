@@ -1,4 +1,4 @@
-class MyBuffer {
+export class MyBuffer {
     constructor(str) {
         this.str = str
         this.idx = 0
@@ -22,4 +22,4 @@ class MyBuffer {
     }
 }
 
-module.exports = MyBuffer
+//module.exports = MyBuffer

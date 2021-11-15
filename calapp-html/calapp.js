@@ -1,7 +1,7 @@
 //let MyLang = require('./calculater.js')
 //import('./calculater.js').then(module => {});
-import { module } from "./calculater.js"
-let MyLang = new module.MyLang;
+import { MyLang } from "./calculater.js"
+//let MyLang = new module.MyLang;
 
 
 let isCheck = false;
@@ -12,7 +12,7 @@ function cal(str){
     return ans;
 }
 
-document.getElementById("unchi").onclick = function get_calc(btn) {
+document.getElementById("unchi").onclick = function get_calc() {
     // if(isCheck){
     //     document.dentaku.display.value = "";
     //     isCheck = false;

@@ -1,8 +1,8 @@
 //let MyBuffer = require('./mybuffer.js')
-import { module } from "./mybuffer.js"
-let MyBuffer = new module.MyBuffer;
+import { MyBuffer } from "./mybuffer.js"
+//let MyBuffer = new module.MyBuffer;
 
-class MyLexer {
+export class MyLexer {
     constructor(str) {
         this.idx = 0
         this.tokens = []
@@ -58,4 +58,4 @@ class MyLexer {
     }
 }
 
-module.exports = MyLexer
+//module.exports = MyLexer

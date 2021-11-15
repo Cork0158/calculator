@@ -1,8 +1,8 @@
 //let MyLexer = require('./mylexer.js')
-import { module } from "./mylexer.js"
-let MyLexer = new module.MyLexer;
+import { MyLexer } from "./mylexer.js"
+//let MyLexer = new module.MyLexer;
 
-class MyLang {
+export class MyLang {
     constructor() {}
 
     exec(str) {
@@ -65,4 +65,4 @@ class MyLang {
     }
 }
 
-module.exports = MyLang
+//module.exports = MyLang
