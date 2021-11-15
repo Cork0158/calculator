@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'calculator_parser.dart';
+//import 'calculator_parser-copy.dart';
 
 void main() => runApp(MyApp());
 
@@ -103,22 +104,24 @@ void _addKey(String key) {
   }
 
   if (operators.contains(key)) {
-    // Handle as an operator
+    // 入力が演算子の場合
     if (_expr.length > 0 && operators.contains(_expr[_expr.length - 1])) {
       _expr = _expr.substring(0, _expr.length - 1);
     }
     _expr += key;
   } else if (digits.contains(key)) {
-    // Handle as an operand
+    // 入力がオペランドの場合
     _expr += key;
   } else if (key == 'C') {
-    // Delete last character
+    // 末尾を消去
     if (_expr.length > 0) {
       _expr = _expr.substring(0, _expr.length - 1);
     }
   } else if (key == '=') {
+    // 計算の実行
     try {
       var parser = const Parser();
+      //print(_expr);
       _result = parser.parseExpression(_expr).toString();
     } on Error {
       _result = 'Error';
@@ -142,16 +145,16 @@ class Keyboard extends StatelessWidget {
               aspectRatio: 1.0, // To center the GridView
               child: new GridView.count(
                 crossAxisCount: 5,
-                childAspectRatio: 1.0,
+                childAspectRatio: (4/5),
                 padding: const EdgeInsets.all(4.0),
                 mainAxisSpacing: 4.0,
                 crossAxisSpacing: 4.0,
                 children: [
                   // @formatter:off
-                  '7', '8', '9', '/', '/',
-                  '4', '5', '6', '*', '/',
-                  '1', '2', '3', '-', '/',
-                  'C', '0', '=', '+', '/',
+                  '7', '8', '9', '/', '(',
+                  '4', '5', '6', '*', ')',
+                  '1', '2', '3', '-', ' ',
+                  'C', '0', '=', '+', ' '
                   // @formatter:on
                 ].map((key) {
                   return new GridTile(
