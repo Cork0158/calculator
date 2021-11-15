@@ -1,7 +1,10 @@
-let MyLang = require('./calculater.js')
-//import {} from "./calculater.js"
+//let MyLang = require('./calculater.js')
+//import('./calculater.js').then(module => {});
+import { module } from "./calculater.js"
+let MyLang = new module.MyLang;
 
-var check = Boolean(0);
+
+let isCheck = false;
 
 function cal(str){
     let lang = new MyLang();
@@ -10,25 +13,25 @@ function cal(str){
 }
 
 function get_calc(btn) {
-    if(check) {
-        document.dentaku.display.value = "";
-        check = Boolean(0);
-    }
+    // if(isCheck){
+    //     document.dentaku.display.value = "";
+    //     isCheck = false;
+    // }
 
-    if (btn.value == "=") {
+    if (btn.value === "=") {
         document.dentaku.display.value = cal(document.dentaku.display.value)
         //document.dentaku.display.value = eval(document.dentaku.display.value);
-        check = Boolean(1);
-    } else if (btn.value == "AC") {
+        isCheck = true;
+    } else if (btn.value === "AC") {
         document.dentaku.display.value = "";
-    } else if (btn.value == "C") {
+    } else if (btn.value === "C") {
         document.dentaku.display.value = document.dentaku.display.value.slice(0, -1);
     } else {
-        if (btn.value == "×") {
+        if (btn.value === "×") {
             btn.value = "*";
-        } else if (btn.value == "÷") {
+        } else if (btn.value === "÷") {
             btn.value = "/";
-        } else if (btn.value == "SP") {
+        } else if (btn.value === "SP") {
             btn.value = " "
         }
         document.dentaku.display.value += btn.value;
