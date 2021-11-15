@@ -1,4 +1,5 @@
 let MyBuffer = require('./mybuffer.js')
+//import { module } from "./mybuffer.js"
 
 class MyLexer {
     constructor(str) {

@@ -1,4 +1,5 @@
 let MyLexer = require('./mylexer.js')
+//import { module } from "./mylexer.js"
 
 class MyLang {
     constructor() {}
