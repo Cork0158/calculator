@@ -1,4 +1,4 @@
-let Cal = require('./calculater.js')
+let MyLang = require('./calculater.js')
 
 var check = Boolean(0);
 
@@ -9,9 +9,7 @@ function get_calc(btn) {
     }
 
     if (btn.value == "=") {
-        let cal = new Cal(document.dentaku.display.value)
-        
-        document.dentaku.display.value = Cal.exec(document.dentaku.display.value)
+        document.dentaku.display.value = cal(document.dentaku.display.value)
         //document.dentaku.display.value = eval(document.dentaku.display.value);
         check = Boolean(1);
     } else if (btn.value == "AC") {
@@ -29,5 +27,12 @@ function get_calc(btn) {
         document.dentaku.display.value += btn.value;
         document.dentaku.multi_btn.value = "×";
         document.dentaku.div_btn.value = "÷";
+        document.dentaku.space_btn.value = "SP";
     }
+}
+
+function cal(str){
+    let lang = new MyLang();
+    let ans = lang.exec(str);
+    return ans;
 }
