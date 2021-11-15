@@ -1,7 +1,7 @@
 let MyLexer = require('./mylexer.js')
 
 class MyLang {
-    constructor() { }
+    constructor() {}
 
     exec(str) {
         return this.expression(new MyLexer(str))

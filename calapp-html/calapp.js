@@ -2,6 +2,12 @@ let MyLang = require('./calculater.js')
 
 var check = Boolean(0);
 
+function cal(str){
+    let lang = new MyLang();
+    let ans = lang.exec(str);
+    return ans;
+}
+
 function get_calc(btn) {
     if(check) {
         document.dentaku.display.value = "";
@@ -31,8 +37,3 @@ function get_calc(btn) {
     }
 }
 
-function cal(str){
-    let lang = new MyLang();
-    let ans = lang.exec(str);
-    return ans;
-}
