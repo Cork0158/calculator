@@ -12,7 +12,7 @@ function cal(str){
     return ans;
 }
 
-function get_calc(btn) {
+document.getElementById("unchi").onclick = function get_calc(btn) {
     // if(isCheck){
     //     document.dentaku.display.value = "";
     //     isCheck = false;

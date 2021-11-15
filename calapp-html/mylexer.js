@@ -1,5 +1,5 @@
 //let MyBuffer = require('./mybuffer.js')
-import { module } from "./mybuffer"
+import { module } from "./mybuffer.js"
 let MyBuffer = new module.MyBuffer;
 
 class MyLexer {

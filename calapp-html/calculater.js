@@ -1,5 +1,5 @@
 //let MyLexer = require('./mylexer.js')
-import { module } from "./mylexer"
+import { module } from "./mylexer.js"
 let MyLexer = new module.MyLexer;
 
 class MyLang {
