@@ -1,6 +1,4 @@
-//let MyLexer = require('./mylexer.js')
 import { MyLexer } from "./mylexer.js"
-//let MyLexer = new module.MyLexer;
 
 export class MyLang {
     constructor() {}
@@ -55,7 +53,8 @@ export class MyLang {
                 lexer.next()
             }
             else {
-                console.log('Syntax Error! : unexpected charactor = ', lexer.read())
+                //console.log('Syntax Error! : unexpected charactor = ', lexer.read())
+                result = "Error";
             }
             return result
         }
@@ -64,5 +63,3 @@ export class MyLang {
         }
     }
 }
-
-//module.exports = MyLang

@@ -1,43 +1,45 @@
-//let MyLang = require('./calculater.js')
-//import('./calculater.js').then(module => {});
 import { MyLang } from "./calculater.js"
-//let MyLang = new module.MyLang;
 
+let displayValue = "";
 
-let isCheck = false;
-
-function cal(str){
-    let lang = new MyLang();
-    let ans = lang.exec(str);
-    return ans;
+function cal(str) {
+    return new MyLang().exec(str);
 }
 
-document.getElementById("unchi").onclick = function get_calc() {
-    // if(isCheck){
-    //     document.dentaku.display.value = "";
-    //     isCheck = false;
-    // }
+const btns = document.querySelectorAll("#btns > tbody > tr > td > input[type=button]");
 
-    if (btn.value === "=") {
-        document.dentaku.display.value = cal(document.dentaku.display.value)
-        //document.dentaku.display.value = eval(document.dentaku.display.value);
-        isCheck = true;
-    } else if (btn.value === "AC") {
-        document.dentaku.display.value = "";
-    } else if (btn.value === "C") {
-        document.dentaku.display.value = document.dentaku.display.value.slice(0, -1);
-    } else {
-        if (btn.value === "×") {
-            btn.value = "*";
-        } else if (btn.value === "÷") {
-            btn.value = "/";
-        } else if (btn.value === "SP") {
-            btn.value = " "
+for (const btn of btns) {
+    btn.onclick = function (event) {
+        const eValue = event.currentTarget.value;
+
+        const clearChar = () => { displayValue = displayValue.slice(0, -1); }
+
+        const isTailExp = (exp) => exp.test(displayValue.slice(-1));
+
+        const countBracket = (bracket) => displayValue.split(bracket).length - 1;
+        
+        if (eValue === "=") displayValue = cal(displayValue);
+        if (eValue === "AC") displayValue = "";
+        if (eValue === "C") clearChar()
+        if (eValue === "SP") displayValue += " ";
+        if (eValue === "(" && !isTailExp(/\d/)) displayValue += "(";
+        if (eValue === ")" && countBracket("(") > countBracket(")")) displayValue += ")";
+
+        const isTailOperator = () => isTailExp(/[+\-*/]/);
+        const clearOperator = () => {
+            if (isTailOperator()) clearChar();
         }
-        document.dentaku.display.value += btn.value;
-        document.dentaku.multi_btn.value = "×";
-        document.dentaku.div_btn.value = "÷";
-        document.dentaku.space_btn.value = "SP";
+
+        if (eValue === "+") { clearOperator(); displayValue += "+"; }
+        if (eValue === "-") { clearOperator(); displayValue += "-"; }
+        if (eValue === "×") { clearOperator(); displayValue += "*"; }
+        if (eValue === "÷") { clearOperator(); displayValue += "/"; }
+
+        const isNumber = (e) => /[0-9]/.test(e);
+        if (isNumber(eValue) && !isTailExp(/[)]/)) displayValue += eValue;
+
+        document.getElementById("display").value = displayValue;
+        console.log(displayValue);
+        if (eValue === "=") displayValue = "";
     }
 }
-

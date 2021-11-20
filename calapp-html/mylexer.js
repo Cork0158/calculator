@@ -1,6 +1,4 @@
-//let MyBuffer = require('./mybuffer.js')
 import { MyBuffer } from "./mybuffer.js"
-//let MyBuffer = new module.MyBuffer;
 
 export class MyLexer {
     constructor(str) {
@@ -18,7 +16,7 @@ export class MyLexer {
         while (buf.exist()) {
             if (/\d/.test(buf.read())) {
                 this.tokens.push(this.getlex_number(buf))
-            } else if (/[\+\-\*\/\(\)]/.test(buf.read())) {
+            } else if (/[+\-*/()]/.test(buf.read())) {
                 this.tokens.push(this.getlex_symbol(buf))
             } else {
                 buf.next()
@@ -57,5 +55,3 @@ export class MyLexer {
         return this.tokens[this.idx++]
     }
 }
-
-//module.exports = MyLexer

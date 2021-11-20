@@ -7,64 +7,60 @@
     </head>
 
     <body>
-        <form name="dentaku">
-            <table>
-                <!-- 液晶画面部分 -->
-                <tr>
-                    <td colspan="4">
-                        <input type="text" class="display" name="display" value="" disabled>
-                    </td>
-                </tr>
+        <table id="btns">
+            <!-- 液晶画面部分 -->
+            <tr>
+                <td colspan="4">
+                    <input type="text" class="display" id="display" value="" disabled>
+                </td>
+            </tr>
 
-                <!-- 上から1段目 -->
-                <tr>
-                    <td><input type="button" value="7" id="click"></td>
-                    <td><input type="button" value="8" id="click"></td>
-                    <td><input type="button" value="9" id="click"></td>
-                    <td><input type="button" value="÷" class="operator" name="div_btn" id="click"></td>
-                </tr>
+            <!-- 上から1段目 -->
+            <tr>
+                <td><input type="button" value="7"></td>
+                <td><input type="button" value="8"></td>
+                <td><input type="button" value="9"></td>
+                <td><input type="button" value="÷" class="operator" name="div_btn"></td>
+            </tr>
 
-                <!-- 上から2段目 -->
-                <tr>
-                    <td><input type="button" value="4" id="click"></td>
-                    <td><input type="button" value="5" id="click"></td>
-                    <td><input type="button" value="6" id="click"></td>
-                    <td><input type="button" value="×" class="operator" name="multi_btn" id="click"></td>
-                </tr>
+            <!-- 上から2段目 -->
+            <tr>
+                <td><input type="button" value="4"></td>
+                <td><input type="button" value="5"></td>
+                <td><input type="button" value="6"></td>
+                <td><input type="button" value="×" class="operator" name="multi_btn"></td>
+            </tr>
 
-                <!-- 上から3段目 -->
-                <tr>
-                    <td><input type="button" value="1" id="click"></td>
-                    <td><input type="button" value="2" id="click"></td>
-                    <td><input type="button" value="3" id="click"></td>
-                    <td><input type="button" value="-" class="operator" id="click"></td>
-                </tr>
+            <!-- 上から3段目 -->
+            <tr>
+                <td><input type="button" value="1"></td>
+                <td><input type="button" value="2"></td>
+                <td><input type="button" value="3"></td>
+                <td><input type="button" value="-" class="operator"></td>
+            </tr>
 
-                <!-- 上から4段目 -->
-                <tr>
-                    <td><input type="button" value="0" id="click"></td>
-                    <td><input type="button" value="(" class="operator" id="click"></td>
-                    <td><input type="button" value=")" class="operator" id="click"></td>
-                    <td><input type="button" value="+" class="operator" id="click"></td>
-                </tr>
-                
-                <!-- 上から5段目 -->
-                <tr>
-                    <td><input type="button" value="AC" id="click"></td>
-                    <td><input type="button" value="C" id="click"></td>
-                    <td><input type="button" value="SP" name="space_btn" id="click"></td>
-                    <td><input type="button" value="=" class="equal" id="click"></td>
-                </tr>
+            <!-- 上から4段目 -->
+            <tr>
+                <td><input type="button" value="0"></td>
+                <td><input type="button" value="(" class="operator"></td>
+                <td><input type="button" value=")" class="operator"></td>
+                <td><input type="button" value="+" class="operator"></td>
+            </tr>
 
-            </table>
-        </form>
+            <!-- 上から5段目 -->
+            <tr>
+                <td><input type="button" value="AC"></td>
+                <td><input type="button" value="C"></td>
+                <td><input type="button" value="SP" name="space_btn"></td>
+                <td><input type="button" value="=" class="equal"></td>
+            </tr>
+
+        </table>
+
         <script type="module" src="calapp.js"></script>
         <script type="module" src="calculater.js"></script>
         <script type="module" src="mylexer.js"></script>
         <script type="module" src="mybuffer.js"></script>
-        
-         
-        
     </body>
 
 </html>
