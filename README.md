@@ -39,8 +39,11 @@ expression = ["+"|"-"], term, { ("+"|"-"), term } ;
 term       = factor, { ("*"|"/"), factor } ;
 factor     = number | "(", expression, ")" ;
 ```
-
-
+```math
+\prod_{k=2}^{\pi}({}_k C_2 \times 6)
+```
+![\prod_{k=2}^{\pi}({}_k C_2 \times 6)
+](https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cprod_%7Bk%3D2%7D%5E%7B%5Cpi%7D%28%7B%7D_k+C_2+%5Ctimes+6%29%0A)
 
 ## 参考文献
 ### 再帰下降構文解析
